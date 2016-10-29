@@ -1,2 +1,2 @@
-# Santosh
-Laravel blog
+# Blog
+It's laravel Blog application with MVC and what not?
