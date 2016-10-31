@@ -51,3 +51,6 @@
         </div>
     </div>
 @endsection
+@section('floaters')
+    @include('partials._createPost')
+@endsection

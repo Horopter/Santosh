@@ -1,0 +1,1 @@
+{!!  Form::button('<span class="fa-stack fa-lg" style="color: #00CED1"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-check-square-o fa-stack-1x fa-inverse"></i></span>', array('type' => 'submit', 'class' => ''))  !!}

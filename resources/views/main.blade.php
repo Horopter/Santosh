@@ -8,6 +8,7 @@
     @include('partials._nav')
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
+    @yield('update-call')
     @include('partials._pageHeader')
     @include('partials._messages')
     <!-- Main Content -->
@@ -20,7 +21,7 @@
     @include('partials._footer')
     </footer>
     @yield('floaters')
-    @include('partials._createPost')
+    @yield('submit-call')
     @include('partials._javascriptInclusions')    
 </body>
 </html>

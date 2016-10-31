@@ -1,7 +1,7 @@
 @if($source == 'welcome')
 @foreach($posts as $post)
     <div class="post-preview w3-card-8">
-        <a href="{{route('posts.show',$post -> id)}}">
+        <a href="{{url('slugg.single',$post -> slug)}}">
             <h2 class="post-title">
                 {{ $post -> title }}
             </h2>
@@ -12,7 +12,7 @@
         <h6 class="post-body">
                 {{ substr($post -> body,0,30)}} {{ strlen($post-> body > 30)?"...":"" }}
             </h6>
-        <p class="post-meta">Posted by <a href="#"> Horopter </a> on {{ date('M j, Y h:i a',strtotime($post-> created_at )) }}</p>
+        <p class="post-meta">Posted by <a href="#"> Horopter </a> on {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $post -> created_at, 'UTC')->setTimezone('Asia/Kolkata')->format('F d, Y @ h:i:s A T') }}</p>
         <div class="right">
             @include('partials.buttons._editButton')
             @include('partials.buttons._deleteButton')
@@ -37,7 +37,9 @@
                     @foreach($posts as $post)
                         <tr>
                         <td>{{ $post -> id }}</td>
+                        <a href="{{url('slug/'.$post -> slug)}}">
                         <td>{{ $post -> title }}</td>
+                        </a>
                         <td>{{ $post -> subtitle }}</td>
                         <td>{{ substr($post -> body,0,30)}} {{ strlen($post-> body > 30)?"...":"" }}</td>
                         <td>{{ date('M j, Y h:i a',strtotime($post-> created_at )) }}</td>

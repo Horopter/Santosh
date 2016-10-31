@@ -24,7 +24,7 @@ h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
-a {
+a{
   color: #333333;
 }
 a:hover,
@@ -428,3 +428,9 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #0085A1;
 }
+input[type="submit"],button {
+  background:none!important;
+    border:none; 
+    padding:0!important;
+}
+button:focus {outline:0;}
