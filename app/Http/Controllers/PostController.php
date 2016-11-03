@@ -10,6 +10,11 @@ use Session;
 
 class PostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => 'logout']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -45,7 +50,7 @@ class PostController extends Controller
         $this->validate($request,array(
             'title' => 'required|min:5|max:255',
             'subtitle' => 'required|min:10|max:255',
-            'slug' => 'required|alpha_dash|min:5|max:255'
+            'slug' => 'required|alpha_dash|min:5|max:255',
             'body' => 'required'
             ));
         //store it in the database
@@ -101,7 +106,7 @@ class PostController extends Controller
         //validate the data before we use it
 
         $post = Post::find($id);
-        if($request -> input('slug') == $post ->$slug);
+        if($request -> input('slug') == $post ->$slug)
         {
             $this->validate($request,array(
             'title' => 'required|min:5|max:255',

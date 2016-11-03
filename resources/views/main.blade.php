@@ -12,6 +12,7 @@
     @include('partials._pageHeader')
     @include('partials._messages')
     <!-- Main Content -->
+    {{Auth::check()?"Logged in" : "Logged out"}}
     <div class="container">
         @yield('content')
     </div>

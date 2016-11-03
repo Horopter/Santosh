@@ -16,7 +16,7 @@ class SlugController extends Controller
 
     public function getIndex()
     {
-    	$posts = Post:simplePaginate(10);
+    	$posts = Post::simplePaginate(10);
     	return view('slug.index')->withPosts($posts);
     }
 }
